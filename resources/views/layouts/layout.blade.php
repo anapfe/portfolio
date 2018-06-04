@@ -10,7 +10,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Ana Pfefferkorn - Portfolio</title>
+  <title>Estudio Wegman</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">

@@ -30,8 +30,8 @@
       </div>
     </div>
     <div class="right-side">
-      <h2><span class="bold">Año: </span>{{ $project->year }}</h2>
-      <h2><span class="bold">Cliente: </span>{{ $project->client }}</h2>
+      <h3><span class="bold">Año: </span>{{ $project->year }}</h3>
+      <h3><span class="bold">Cliente: </span>{{ $project->client }}</h3>
     </div>
   </div>
 </div>
