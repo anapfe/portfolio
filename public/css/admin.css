@@ -1,0 +1,335 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li, input,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* css propio */
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FF9966;
+  height: 40px;
+}
+.site {
+  padding-top: 13px;
+  padding-left: 45px;
+  color: white;
+  font-weight: 500;
+}
+.site a {
+  color: white;
+}
+.site a:hover {
+  color: #663366;
+}
+a {
+  color: #663366;
+}
+
+a:hover {
+  font-weight: 700;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 40px;
+  margin-top: 60px;
+}
+.errors {
+  color: red;
+  font-weight: 500;
+  font-size: 0.9em;
+  line-height: 2em;
+  display: block;
+}
+.left-nav {
+  width: 160px;
+}
+.user-data {
+  width: 100%;
+  text-align: center;
+}
+.admin-foto {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border: 2px solid #663366;
+}
+.username {
+  font-weight: 700;
+  display: block;
+  color: #663366;
+}
+.menu {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 0.9em;
+}
+.menu-item {
+  color: grey;
+  border-bottom: 1px solid grey;
+  display: block;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-item a:hover {
+  font-weight: 700;
+}
+.menu-subitem {
+  border-bottom: 2px solid #663366;
+  padding: 12px 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.menu-subitem a {
+  color: #663366;
+}
+.menu-subitem a:hover {
+  font-weight: 700;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.rotate {
+  transform: rotate(180deg);
+
+}
+.main {
+  width: 100%;
+  margin-left: 40px;
+}
+.section-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  color: grey;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.form-div {
+  width: 60%;
+}
+.main-body {
+  width: 100%;
+}
+.form-project {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input {
+  margin-bottom: 20px;
+  width: 500px;
+}
+.input-div {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.div-right, .div-left {
+  width: 50%;
+}
+.div-left {
+  padding-right: 60px;
+}
+.index-img {
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+.div-top, .div-bottom {
+  width: 100%;
+  display: block;
+}
+.div-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+#title, #name {
+  width: 100%;
+}
+#year {
+  width: 30%;
+}
+#client {
+  width: 60%;
+}
+.div-tags {
+  margin-bottom: 20px;
+  margin-right: 50px;
+  width: 100%;
+  display: block;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+.tag-text {
+  color: #663366;
+  margin-right: 15px;
+}
+.input-project {
+  width: 100%;
+  border: 1px solid grey;
+  height: 25px;
+  display: block;
+  font-size: 0.8em;
+  padding-left: 8px;
+}
+.input-textarea {
+  height: 87px;
+  width: 400px;
+  border: 1px solid grey;
+  font-family: roboto;
+  padding: 5px;
+}
+.form-label {
+  color: grey;
+  padding-bottom: 12px;
+  display: block;
+}
+.input-login {
+  width: 100%;
+  border: 1px solid grey;
+  height: 25px;
+}
+.btn {
+  padding: 15px;
+  background-color: #FF9966;
+  color: white;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: grey;
+}
+.controls {
+  display: flex;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #663366;
+}
+.control-select {
+  text-align: left;
+  border: 1px solid #663366;
+  height: 25px;
+  font-size: 0.8em;
+  width: 150px;
+  text-transform: lowercase;
+}
+.search {
+  display: flex;
+}
+.search-box {
+  border: 1px solid #663366;
+  min-width: 100px;
+  max-width: 200px;
+  height: 25px;
+  margin-right: 10px;
+  font-size: 0.8em;
+  padding: 0 5px;
+  display: flex;
+}
+.search-button {
+  background-color: transparent;
+  position: relative;
+  right: 30px;
+}
+.results {
+  font-size: 0.9em;
+  background-color: lightgoldenrodyellow;
+  padding: 8px;
+}
+table {
+  width: 100%;
+  text-align: left;
+}
+table th {
+  color: grey;
+  font-size: 0.9em;
+  padding: 10px;
+  border-bottom: 1px solid #663366;
+}
+table td {
+  padding: 10px ;
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  vertical-align: top;
+}
+.project-15 {
+  width: 15%;
+}
+.project-10 {
+  width: 10%;
+}
+.project-description {
+  width: 25%;
+}
+.project-ctrl {
+  width: 6%;
+}
+.project-img {
+  width: 100px;
+}
+.fa {
+  color: black;
+}
+.fa:hover {
+  color: #FF9966;
+}
