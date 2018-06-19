@@ -14,7 +14,7 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.css') }} ">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
   <!-- Scripts -->
@@ -24,40 +24,42 @@
 
 <body>
   <header>
-      <div id="backtop">&#9650;</div>
-      <a class="logo" href="/">
-        <img class="logo-mobile" src="{{asset('images/logo-responsive.png')}}" alt="">
-        <img class="logo-desktop" src="{{asset('images/logo.png')}}" alt="">
-      </a>
-      <nav class="menu">
-        <ul class="menu-items">
-          <li class="menu-item"> <a href="/">Proyectos</a> </li>
-          <li class="menu-item"> <a href="/estudio">Estudio</a> </li>
-          <li class="menu-item"> <a href="/contacto">Contacto</a> </li>
-          <li class="menu-item"> <a href="/tienda">Tienda</a> </li>
-          @auth
-            <li class="menu-item"><a href="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-          @endauth
-        </ul>
-        <a class="menu-hamburger">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
-      </nav>
-  </header>
-    {{-- @guest
-    @else
-      <li class="menu-item">
-        <a href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-        Salir
-      </a>
+    <div id="backtop">&#9650;</div>
+    <a class="logo" href="/">
+      <img class="logo-mobile" src="{{asset('images/logo-responsive.png')}}" alt="">
+      <img class="logo-desktop" src="{{asset('images/logo.png')}}" alt="">
+    </a>
+    <nav class="menu">
+      <ul class="menu-items">
+        <li class="menu-item"> <a href="/">Proyectos</a> </li>
+        <li class="menu-item"> <a href="/estudio">Estudio</a> </li>
+        <li class="menu-item"> <a href="/contacto">Contacto</a> </li>
+        <li class="menu-item"> <a href="/tienda">En</a> </li>
+        <li class="menu-item"> <a href="/tienda"><i class="fas fa-shopping-cart"></i></a> </li>
 
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-      </form>
-    </li>
-  @endguest --}}
+        @auth
+          <li class="menu-item"><a href="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+        @endauth
+      </ul>
+      <a class="menu-hamburger">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </a>
+    </nav>
+  </header>
+  {{-- @guest
+@else
+<li class="menu-item">
+<a href="{{ route('logout') }}"
+onclick="event.preventDefault();
+document.getElementById('logout-form').submit();">
+Salir
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+{{ csrf_field() }}
+</form>
+</li>
+@endguest --}}
 
 @yield('content')
 

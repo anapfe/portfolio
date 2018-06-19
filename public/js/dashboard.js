@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
       if (currentUrl === menuUrl) {
         parent.classList.add('show');
         menuItem.style.fontWeight = "700";
-      });
+      };
     });
   } catch(error) {
   };

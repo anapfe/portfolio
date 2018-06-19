@@ -55,7 +55,7 @@ body {
   font-size: 17px;
   line-height: 27px;
   font-weight: 400;
-  background-image: url('../images/background_o.jpg');
+  /* background-image: url('../images/background_o.jpg'); */
 }
 header {
   width: 100%;

@@ -43,7 +43,7 @@
         </tr>
 
         @foreach ($projects as $project)
-          {{dd($project->tags)}}
+          {{-- {{dd($project->tags)}} --}}
           <tr>
             <td><img class="project-img" src="{{ asset ( 'storage/' . $project->primary_img ) }}" alt=""></td>
             <td>{{ $project->title }}</td>

@@ -77,7 +77,7 @@
   @yield('content')
 
 </div>
-<script src="{{asset( 'js/dashboard.js' )}}"></script>
+<script src="{{ asset( 'js/dashboard.js' ) }}"></script>
 {{-- <script src="{{asset( 'js/mail.js' )}}"></script> --}}
 </body>
 </html>
