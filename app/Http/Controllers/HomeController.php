@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use \App\Tag;
 use \App\Project;
 use \App\Product;
+use \App;
+use Session;
 
 class HomeController extends Controller
 {
@@ -45,6 +47,15 @@ class HomeController extends Controller
     ];
     return view('index', $param);
   }
+
+  // cambiar idioma
+  public function changeLang($lang)
+  {
+    Session::put('locale', $lang);
+    App::setLocale($lang);
+    return redirect()->back();
+  }
+
   public function indexAdmin()
   {
     return view('indexAdmin');

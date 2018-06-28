@@ -31,10 +31,15 @@
     </a>
     <nav class="menu">
       <ul class="menu-items">
-        <li class="menu-item"> <a href="/">Proyectos</a> </li>
-        <li class="menu-item"> <a href="/estudio">Estudio</a> </li>
-        <li class="menu-item"> <a href="/contacto">Contacto</a> </li>
-        <li class="menu-item"> <a href="/tienda">En</a> </li>
+        <li class="menu-item"> <a href="/">{{ trans('file.proyectos') }}</a> </li>
+        <li class="menu-item"> <a href="/estudio">{{ trans('file.estudio') }}</a> </li>
+        <li class="menu-item"> <a href="/contacto">{{ trans('file.contacto') }}</a> </li>
+
+        @if (App::isLocale('es'))
+          <li class="menu-item"> <a href="/en">En</a> </li>
+        @else
+          <li class="menu-item"> <a href="/es">Es</a> </li>
+        @endif
 
         @auth
           <li class="menu-item"><a href="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
