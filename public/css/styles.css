@@ -55,7 +55,7 @@ body {
   font-size: 17px;
   line-height: 27px;
   font-weight: 400;
-  /* background-image: url('../images/background_o.jpg'); */
+  /*background-image: url('../images/background_o.jpg');*/
 }
 header {
   width: 100%;
@@ -66,7 +66,7 @@ a {
   color: #999966;
 }
 a:hover {
-  color: #663366;
+  color: #FF793F;
 }
 h2 {
   font-size: 36px;
@@ -134,6 +134,7 @@ h4 {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 .tag-filter li {
   margin: 0 8px;
@@ -143,7 +144,7 @@ h4 {
   font-weight: bold;
 }
 .tag-filter li a:hover {
-  color: black;
+  color: #FF793F;
 }
 
 /* inicio no se toca */

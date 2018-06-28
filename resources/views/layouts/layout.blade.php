@@ -10,7 +10,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Estudio Wegman</title>
+  <title>Wegman Studio</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -35,7 +35,6 @@
         <li class="menu-item"> <a href="/estudio">Estudio</a> </li>
         <li class="menu-item"> <a href="/contacto">Contacto</a> </li>
         <li class="menu-item"> <a href="/tienda">En</a> </li>
-        <li class="menu-item"> <a href="/tienda"><i class="fas fa-shopping-cart"></i></a> </li>
 
         @auth
           <li class="menu-item"><a href="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
