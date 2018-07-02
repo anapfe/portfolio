@@ -1,11 +1,9 @@
 window.addEventListener('load', function() {
 
-  // if (window.location.pathname === '/' ) {
   var btn = document.querySelector('.menu-hamburger');
   btn.onclick = function() {
     document.querySelector(".menu-items").classList.toggle("show-menu");
   }
-  // };
 
   var projectCaption = document.querySelectorAll('.project-caption');
   projectCaption.forEach(function(element)

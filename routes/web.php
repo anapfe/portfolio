@@ -22,17 +22,14 @@ Route::get('/admin', 'HomeController@indexAdmin');
 
 // Publico
 Route::get('/', 'HomeController@index')->name('home')->middleware('setlocale');
-
 Route::get('/estudio', 'HomeController@us');
 Route::get('/contacto', 'HomeController@contactUs');
 Route::get('/tienda', 'HomeController@store');
-
-// rutas frente
 Route::get('/proyectos/{id}', 'ProjectsController@projectDescription');
 Route::get('/proyectos/{tag}', 'ProjectsController@listProjectsByTag');
 
+// Rutas admin
 Route::group( [ 'middleware' =>'admin' ], function() {
-
   Route::prefix('admin')->group(function () {
 
     // Rutas Proyectos
@@ -44,7 +41,7 @@ Route::group( [ 'middleware' =>'admin' ], function() {
     Route::get('/proyecto_nuevo', 'ProjectsController@createProject');
     Route::post('/proyecto_nuevo', 'ProjectsController@storeProject');
     Route::get('/proyecto_modificar/{id}', 'ProjectsController@editProject');
-    Route::patch('proyecto_modificar/{id}', 'ProjectsController@updateProject');
+    Route::patch('/proyecto_modificar/{id}', 'ProjectsController@updateProject');
     Route::get('/proyecto_eliminar/{id}', 'ProjectsController@destroyProject');
     Route::get('/buscarProyectos', 'ProjectsController@searchProjects');
 

@@ -13,7 +13,7 @@
       <div class="project-masonry">
         @foreach ($projects as $project)
           <div class="project-card">
-            <a class="project-link" href="{{ '/proyecto/' . $project->id }}">
+            <a class="project-link" href="{{ '/proyectos/' . $project->id }}">
               <img class="project-img" src="{{ asset( '/storage/' . $project->primary_img )}}" alt="foto de proyecto">
               <div class="project-caption">
                 <div>

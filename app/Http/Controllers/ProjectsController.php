@@ -215,7 +215,8 @@ class ProjectsController extends Controller
       $image->save();
     }
     $project->delete();
-    return redirect('/proyectos');
+    // return redirect('/admin/proyectos');
+    // return response()->json(['success'=>"Producto eliminado correctamente"]);
   }
 
   public function error404() {

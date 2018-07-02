@@ -41,25 +41,25 @@
             <li class="dropdown">
               <a class="menu-item" id="projects" href="#">Proyectos <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="hidden" id="dropProjects">
-                <li class="menu-subitem"><a href="/proyectos">Listado</a></li>
-                <li class="menu-subitem"><a href="/proyecto_nuevo">Nuevo Proyecto</a></li>
+                <li class="menu-subitem"><a href="/admin/proyectos">Listado</a></li>
+                <li class="menu-subitem"><a href="/admin/proyecto_nuevo">Nuevo Proyecto</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a class="menu-item" id="products" href="#">Productos <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="hidden" id="dropProducts">
-                <li class="menu-subitem"><a href="/productos">Listado</a></li>
-                <li class="menu-subitem"><a href="/producto_nuevo">Nuevo Producto</a></li>
+                <li class="menu-subitem"><a href="/admin/productos">Listado</a></li>
+                <li class="menu-subitem"><a href="/admin/producto_nuevo">Nuevo Producto</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a class="menu-item" id="tags" href="#">Etiquetas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="hidden" id="dropTags">
-                <li class="menu-subitem"><a href="/etiquetas">Listado</a></li>
-                <li class="menu-subitem"><a href="/etiqueta_nueva">Nueva Etiqueta</a></li>
+                <li class="menu-subitem"><a href="/admin/etiquetas">Listado</a></li>
+                <li class="menu-subitem"><a href="/admin/etiqueta_nueva">Nueva Etiqueta</a></li>
               </ul>
             </li>
-            <li><a class="menu-item" href="/editar_cuenta/{{ Auth::user()->id }}">Editar Perfil</a></li>
+            <li><a class="menu-item" href="/admin//editar_cuenta/{{ Auth::user()->id }}">Editar Perfil</a></li>
             <li>
               <a class="menu-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
@@ -71,7 +71,6 @@
           </li>
         </ul>
       </div>
-
     @endguest
   </div>
   @yield('content')
@@ -79,5 +78,8 @@
 </div>
 <script src="{{ asset( 'js/dashboard.js' ) }}"></script>
 {{-- <script src="{{asset( 'js/mail.js' )}}"></script> --}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
 </body>
 </html>

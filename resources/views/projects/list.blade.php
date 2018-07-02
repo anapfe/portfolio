@@ -6,7 +6,7 @@
     <div class="section-title">
       <span>Proyectos</span>
       <div class="controls">
-        <form class="search" action="/buscarProyectos" method="get">
+        <form class="search" action="/admin/buscarProyectos" method="get">
           <input class="search-box" type="text" name="search" value="" placeholder="buscar">
           <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
@@ -19,7 +19,7 @@
       </select> --}}
       <select class="control-select" name="">
         <option value=""><a href="#">Acciones por Lote</a></option>
-        <option value=""><a href="/proyectos_eliminar">Eliminar</a></option>
+        <option value=""><a href="/admin/proyectos_eliminar">Eliminar</a></option>
       </select>
     </div>
   </div>
@@ -32,10 +32,10 @@
       <table>
         <tr>
           <th class="project-10">Foto Inicio</th>
-          <th class="project-15"><a href="/proyectos_titulo">Título ˅</a></th>
+          <th class="project-15"><a href="/admin/proyectos_titulo">Título ˅</a></th>
           <th class="project-description">Descripción</th>
-          <th class="project-ctrl"><a href="/proyectos_año">Año ˅</a></th>
-          <th class="project-10"><a href="/proyectos_cliente">Cliente ˅</a></th>
+          <th class="project-ctrl"><a href="/admin/proyectos_año">Año ˅</a></th>
+          <th class="project-10"><a href="/admin/proyectos_cliente">Cliente ˅</a></th>
           <th class="project-15">Etiquetas</th>
           <th class="project-ctrl">Editar</th>
           <th class="project-ctrl">Eliminar</th>
@@ -54,14 +54,13 @@
               @foreach ($project->tags as $tag)
                 {{ $tag->name }},
               @endforeach
-
-              {{-- {{ dd($project->tags[0]->name) }} --}}
             </td>
-            <td><a href="/proyecto_modificar/{{$project->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-            <td><a class="delete" href="/proyecto_eliminar/{{$project->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+            <td><a href="/admin/proyecto_modificar/{{$project->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+            <td><a class="delete" href="/admin/proyecto_eliminar/{{$project->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
             <td><input type="checkbox" name="selectAll" class="select"> </td>
           </tr>
         @endforeach
+        
       </table>
     @endif
   </div>

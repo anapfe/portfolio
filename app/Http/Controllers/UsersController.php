@@ -122,7 +122,7 @@ class UsersController extends Controller
 
     $user->save();
 
-    return redirect('/editar_cuenta/' . Auth::user()->id);
+    return redirect('/admin/editar_cuenta/' . Auth::user()->id);
   }
 
 
@@ -135,6 +135,5 @@ class UsersController extends Controller
   */
   public function destroy($id)
   {
-    //
   }
 }

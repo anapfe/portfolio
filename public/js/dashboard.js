@@ -136,119 +136,144 @@ window.addEventListener('load', function() {
   var del = document.querySelectorAll('.delete');
   del.forEach(function(element) {
     element.addEventListener('click', function(event) {
-      var result = confirm("Estás por borrar un proyecto. No se puede deshacer");
-      if (result == false) {
-        event.preventDefault();
+      // var result = confirm("Estás por borrar un proyecto. No se puede deshacer");
+      // if (result == false) {
+      //   event.preventDefault();
+      event.preventDefault()
+      swal({
+        title: "¿Estás seguro?",
+        text: "Una vez eliminado no se puede recuerar",
+        icon: "warning",
+        buttons: ["Cancelar", "Confirmar"],
+        dangerMode: true,
+        timer: 10000,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Se eliminó correctamente", {
+            icon: "success",
+          });
+        } else {
+          swal("No se eliminó");
+          var ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+              console.log(xmlhttp.responseText);
+
+              ajax.open("POST", "url", true);
+
+              ajax.setRequestHeader("Contenttype", "application/xwwwformurlencoded");
+
+            }
+          });
+        });
+      });
+
+      // validacion de carga de proyecto
+      try {
+        var form = document.querySelector('.form-project');
+        var title = document.querySelector('#title');
+        var year = document.querySelector('#year');
+        var client = document.querySelector('#client');
+        var description = document.querySelector('#description');
+        var primary_img = document.querySelector('#primary_img');
+
+        var errors = {};
+
+        title.addEventListener('blur', function() {
+          if (errors.title) {
+            delete errors.title;
+          };
+          deleteSpan('.title');
+          var titleValue = document.querySelector('#title').value;
+          var titleDiv = document.querySelector('.title');
+          var spanError = createSpan();
+          if (titleValue == "") {
+            errors.title = "El campo es requerido";
+          } else {
+            title.style.backgroundColor = "#e5ffe5";
+          };
+
+          if (errors.title) {
+            spanError.innerHTML = errors.title;
+            errorDiv.appendChild(spanError);
+            title.style.backgroundColor = '#ffe5e5';
+          };
+        });
+
+        year.addEventListener('blur', function() {
+          if (errors.year) {
+            delete errors.year;
+          };
+          deleteSpan('.year');
+          var yearValue = document.querySelector('#year').value;
+          var yearDiv = document.querySelector('.year');
+          var spanError = createSpan();
+          if (yearValue == "") {
+            errors.year = "El campo es requerido";
+          } else {
+            year.style.backgroundColor = "#e5ffe5";
+          };
+
+          if (errors.year) {
+            spanError.innerHTML = errors.year;
+            errorDiv.appendChild(spanError);
+            year.style.backgroundColor = '#ffe5e5';
+          };
+        });
+
+        client.addEventListener('blur', function() {
+          if (errors.client) {
+            delete errors.client;
+          };
+          deleteSpan('.client');
+          var clientValue = document.querySelector('#client').value;
+          var clientDiv = document.querySelector('.client');
+          var spanError = createSpan();
+          if (clientValue == "") {
+            errors.client = "El campo es requerido";
+          } else {
+            client.style.backgroundColor = "#e5ffe5";
+          };
+
+          if (errors.client) {
+            spanError.innerHTML = errors.client;
+            errorDiv.appendChild(spanError);
+            client.style.backgroundColor = '#ffe5e5';
+          };
+        });
+
+        description.addEventListener('blur', function() {
+          if (errors.description) {
+            delete errors.description;
+          };
+          deleteSpan('.description');
+          var descriptionValue = document.querySelector('#description').value;
+          var descriptionDiv = document.querySelector('.description');
+          var spanError = createSpan();
+          if (descriptionValue == "") {
+            errors.description = "El campo es requerido";
+          } else {
+            description.style.backgroundColor = "#e5ffe5";
+          };
+
+          if (errors.description) {
+            spanError.innerHTML = errors.description;
+            errorDiv.appendChild(spanError);
+            description.style.backgroundColor = '#ffe5e5';
+          };
+        });
+
+        form.addEventListener('submit', function (event) {
+          if (!isEmpty(errors)) {
+            event.preventDefault();
+          } else {
+            errors = {};
+          };
+        });
+
+      } catch(error) {
+
       };
+
     });
-  });
-
-  // validacion de carga de proyecto
-
-  try {
-    var form = document.querySelector('.form-project');
-    var title = document.querySelector('#title');
-    var year = document.querySelector('#year');
-    var client = document.querySelector('#client');
-    var description = document.querySelector('#description');
-    var primary_img = document.querySelector('#primary_img');
-
-    var errors = {};
-
-    title.addEventListener('blur', function() {
-      if (errors.title) {
-        delete errors.title;
-      };
-      deleteSpan('.title');
-      var titleValue = document.querySelector('#title').value;
-      var titleDiv = document.querySelector('.title');
-      var spanError = createSpan();
-      if (titleValue == "") {
-        errors.title = "El campo es requerido";
-      } else {
-        title.style.backgroundColor = "#e5ffe5";
-      };
-
-      if (errors.title) {
-        spanError.innerHTML = errors.title;
-        errorDiv.appendChild(spanError);
-        title.style.backgroundColor = '#ffe5e5';
-      };
-    });
-
-    year.addEventListener('blur', function() {
-      if (errors.year) {
-        delete errors.year;
-      };
-      deleteSpan('.year');
-      var yearValue = document.querySelector('#year').value;
-      var yearDiv = document.querySelector('.year');
-      var spanError = createSpan();
-      if (yearValue == "") {
-        errors.year = "El campo es requerido";
-      } else {
-        year.style.backgroundColor = "#e5ffe5";
-      };
-
-      if (errors.year) {
-        spanError.innerHTML = errors.year;
-        errorDiv.appendChild(spanError);
-        year.style.backgroundColor = '#ffe5e5';
-      };
-    });
-
-    client.addEventListener('blur', function() {
-      if (errors.client) {
-        delete errors.client;
-      };
-      deleteSpan('.client');
-      var clientValue = document.querySelector('#client').value;
-      var clientDiv = document.querySelector('.client');
-      var spanError = createSpan();
-      if (clientValue == "") {
-        errors.client = "El campo es requerido";
-      } else {
-        client.style.backgroundColor = "#e5ffe5";
-      };
-
-      if (errors.client) {
-        spanError.innerHTML = errors.client;
-        errorDiv.appendChild(spanError);
-        client.style.backgroundColor = '#ffe5e5';
-      };
-    });
-
-    description.addEventListener('blur', function() {
-      if (errors.description) {
-        delete errors.description;
-      };
-      deleteSpan('.description');
-      var descriptionValue = document.querySelector('#description').value;
-      var descriptionDiv = document.querySelector('.description');
-      var spanError = createSpan();
-      if (descriptionValue == "") {
-        errors.description = "El campo es requerido";
-      } else {
-        description.style.backgroundColor = "#e5ffe5";
-      };
-
-      if (errors.description) {
-        spanError.innerHTML = errors.description;
-        errorDiv.appendChild(spanError);
-        description.style.backgroundColor = '#ffe5e5';
-      };
-    });
-
-    form.addEventListener('submit', function (event) {
-      if (!isEmpty(errors)) {
-        event.preventDefault();
-      } else {
-        errors = {};
-      };
-    });
-
-  } catch(error) {
-
-  };
-
-});

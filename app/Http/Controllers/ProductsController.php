@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Product;
+use Alert;
 
 class ProductsController extends Controller
 {
@@ -123,6 +124,6 @@ class ProductsController extends Controller
   {
     $product = Product::find($id);
     $product->delete();
-    return redirect('/productos');
+    return redirect('/admin/productos');
   }
 }
