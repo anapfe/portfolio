@@ -18,7 +18,7 @@ class HomeController extends Controller
   */
   public function __construct()
   {
-    //$this->middleware('auth');
+    // $this->middleware('auth');
   }
 
   /**
@@ -56,19 +56,23 @@ class HomeController extends Controller
     return redirect()->back();
   }
 
+  // index admin
   public function indexAdmin()
   {
     return view('indexAdmin');
   }
 
+  // nosotros
   public function us() {
     return view('studio');
   }
 
+  // contacto
   public function contactUs() {
     return view('contactUs');
   }
 
+  // tienda
   public function store() {
     $products = Product::all();
     $param = [

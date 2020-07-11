@@ -13,18 +13,13 @@
 
 Auth::routes();
 
-Route::get('/storageLink', function () {
-  \Artisan::call('storage:link');
-});
-
 // Admin
 Route::get('/admin', 'HomeController@indexAdmin');
 
 // Publico
 Route::get('/', 'HomeController@index')->name('home')->middleware('setlocale');
 Route::get('/estudio', 'HomeController@us');
-Route::get('/contacto', 'HomeController@contactUs');
-Route::get('/tienda', 'HomeController@store');
+// Route::get('/tienda', 'HomeController@store');
 Route::get('/proyectos/{id}', 'ProjectsController@projectDescription');
 Route::get('/proyectos/{tag}', 'ProjectsController@listProjectsByTag');
 
@@ -37,12 +32,14 @@ Route::group( [ 'middleware' =>'admin' ], function() {
     Route::get('/proyectos', 'ProjectsController@listProjects');
     Route::get('/proyectos_año', 'ProjectsController@listProjectsByYear');
     Route::get('/proyectos_cliente', 'ProjectsController@listProjectsByClient');
+
     Route::get('/proyectos_titulo', 'ProjectsController@listProjectsByTitle');
     Route::get('/proyecto_nuevo', 'ProjectsController@createProject');
     Route::post('/proyecto_nuevo', 'ProjectsController@storeProject');
     Route::get('/proyecto_modificar/{id}', 'ProjectsController@editProject');
     Route::patch('/proyecto_modificar/{id}', 'ProjectsController@updateProject');
     Route::get('/proyecto_eliminar/{id}', 'ProjectsController@destroyProject');
+
     Route::get('/buscarProyectos', 'ProjectsController@searchProjects');
 
     // Rutas Tags
