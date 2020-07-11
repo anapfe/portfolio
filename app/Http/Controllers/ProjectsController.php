@@ -59,7 +59,7 @@ class ProjectsController extends Controller
     return view('projects.list', $param);
   }
 
-  // proyectos por tag
+  // filtrar proyectos por tag
   public function listProjectsByTag($tagName)
   {
     $tag = Tag::where("name", "=", $tagName)->first();

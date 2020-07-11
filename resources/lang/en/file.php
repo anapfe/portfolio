@@ -1,8 +1,8 @@
 <?php
 return [
-  'proyectos' => 'Projects',
-  'estudio' => 'Studio',
-  'contacto' => 'Contact',
+  'proyectos' => 'projects',
+  'estudio' => 'studio',
+  'contacto' => 'contact',
 ];
 
  ?>

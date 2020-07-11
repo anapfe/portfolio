@@ -10,7 +10,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Wegman Studio</title>
+  <title>REPÚBLICA BANANERA</title>
 
   <!-- Styles -->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -36,9 +36,9 @@
         <li class="menu-item"> <a href="/contacto">{{ trans('file.contacto') }}</a> </li>
 
         @if (App::isLocale('es'))
-          <li class="menu-item"> <a href="/en">En</a> </li>
+          <li class="menu-item"> <a href="/en">en</a> </li>
         @else
-          <li class="menu-item"> <a href="/es">Es</a> </li>
+          <li class="menu-item"> <a href="/es">es</a> </li>
         @endif
 
         @auth
@@ -67,9 +67,10 @@ Salir
 
 @yield('content')
 
-{{-- @yield('scripts'); --}}
+@yield('scripts')
 
 <!-- Scripts -->
 <script src="{{ asset('js/main.js') }}"></script>
+
 </body>
 </html>

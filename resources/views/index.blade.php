@@ -4,6 +4,7 @@
   <div class="main">
     <div class="tag-filter wrapper">
       <ul>
+        <li><a href="">Todos</a></li>
         @foreach ($tags as $tag)
           <li><a href="/proyectos/{{ $tag->name }}">{{ $tag->name}}</a></li>
         @endforeach
@@ -29,4 +30,7 @@
       </div>
     </div>
   </div>
+@endsection
+@section('scripts')
+
 @endsection
