@@ -56,8 +56,8 @@ body {
   line-height: 27px;
   font-weight: 400;
   background-color: rgb(240, 207, 181);
-  /* background-image: url('../images/background.png');
-  background-repeat: repeat; */
+  background-image: url('../images/background.png');
+  background-repeat: repeat;
 }
 header {
   width: 100%;
@@ -117,6 +117,7 @@ h4 {
   padding-top: 20px;
 }
 .menu-items a {
+  font-family: 'Playfair Display', serif;
   color: black;
   font-weight: 500;
   font-size: 1.5em;
